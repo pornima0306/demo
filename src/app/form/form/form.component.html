@@ -1,0 +1,55 @@
+<div class="row">
+    <div class="col-md-4">
+        
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" class="form-control"[(ngModel)]="Fname" #fname>
+            </div>
+            <!--  {{fname.value}}  -->
+
+             <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" class="form-control"[(ngModel)]="Lname" #lname>
+            </div>
+             <!-- {{lname.value}}  -->
+
+             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" class="form-control"[(ngModel)]="Email" #email>
+            </div>
+             <!-- {{email.value}} --> 
+
+             <div class="form-group">
+                <label for="contact">Contact</label>
+                <input type="text" id="contact" class="form-control"[(ngModel)]="Contact" #contact>
+            </div>
+            <!--  {{contact.value}}  -->
+           
+            <div class="form-group">
+                <button class="btn btn-success" (click)="onClick()" [disabled]="!fname.value || !lname.value || !email.value || !contact.value">Add blog</button>
+            </div>
+        
+    </div>
+    <div class="col-md-8">
+        <table class="table table-bordered">
+            <thead>
+                <th>Sr.No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+            </thead>
+            <tbody>
+               <!--  <tr *ngFor="let data of stdInfo; index as i"> -->
+                    
+                <tr *ngFor="let data of stdInfo; let i=index">
+                    <td>{{i+1}}</td>
+                    <td>{{data.fname}}</td>
+                    <td>{{data.lname}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.contact}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
